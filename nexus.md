@@ -1,3 +1,7 @@
+For NPM  Proxy : Please use
+
+npm config set registry http://localhost:8081/repository/npm-proxy
+
 ```
 https://levelup.gitconnected.com/deploying-private-npm-packages-to-nexus-a16722cc8166
 
@@ -63,7 +67,15 @@ npm install
 #Browser to npm-proxy in nexus and see the package installed there
 
 ```
+2. For Code/Package : Please add below line in package.json
 
+"publishConfig": {
+     "registry": "http://localhost::8081/repository/npm-hosted/"
+},
+
+and then run below command 
+
+npm login --registry=http://localhost:8081/repository/npm-hosted/
 ```
 2. Create new Repo npm-hosted
 Select npm-hosted and
